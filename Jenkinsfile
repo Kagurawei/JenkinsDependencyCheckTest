@@ -1,10 +1,9 @@
-
 pipeline {
 	agent any
 	stages {
 		stage('Checkout SCM') {
 			steps {
-				git '/home/gmw/Desktop/JenkinsDependencyCheckTest'
+				git '/home/JenkinsDependencyCheckTest'
 			}
 		}
 
