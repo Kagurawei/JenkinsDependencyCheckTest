@@ -17,5 +17,10 @@ pipeline {
 		success {
 			dependencyCheckPublisher pattern: 'dependency-check-report.xml'
 		}
+		steps{
+		dependencyCheck additionalArguments: '--format HTML --format XML --supression supression.xml', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
+		}
+		
 	}
+
 }
