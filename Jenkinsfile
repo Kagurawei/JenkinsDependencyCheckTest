@@ -11,6 +11,9 @@ pipeline {
 			steps {
 				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
 			}
+			steps{
+		dependencyCheck additionalArguments: '--format HTML --format XML --supression supression.xml', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
+		}
 		}
 	}	
 	post {
@@ -20,8 +23,6 @@ pipeline {
 		
 		
 	}
-	steps{
-		dependencyCheck additionalArguments: '--format HTML --format XML --supression supression.xml', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
-		}
+	
 
 }
